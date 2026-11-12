@@ -1,0 +1,568 @@
+{
+ "kind": "labelled-ct",
+ "title": "Labelled CT of another subject",
+ "modality": "CT",
+ "dims": [
+  217,
+  137,
+  326
+ ],
+ "spacing": [
+  2.0,
+  2.0,
+  2.0
+ ],
+ "structures": [
+  {
+   "id": 1,
+   "key": "spleen",
+   "voxels": 34359
+  },
+  {
+   "id": 2,
+   "key": "kidney_right",
+   "voxels": 21159
+  },
+  {
+   "id": 3,
+   "key": "kidney_left",
+   "voxels": 21313
+  },
+  {
+   "id": 4,
+   "key": "gallbladder",
+   "voxels": 677
+  },
+  {
+   "id": 5,
+   "key": "liver",
+   "voxels": 190552
+  },
+  {
+   "id": 6,
+   "key": "stomach",
+   "voxels": 63109
+  },
+  {
+   "id": 7,
+   "key": "pancreas",
+   "voxels": 12249
+  },
+  {
+   "id": 8,
+   "key": "adrenal_gland_right",
+   "voxels": 422
+  },
+  {
+   "id": 9,
+   "key": "adrenal_gland_left",
+   "voxels": 567
+  },
+  {
+   "id": 10,
+   "key": "lung_upper_lobe_left",
+   "voxels": 186893
+  },
+  {
+   "id": 11,
+   "key": "lung_lower_lobe_left",
+   "voxels": 163249
+  },
+  {
+   "id": 12,
+   "key": "lung_upper_lobe_right",
+   "voxels": 147680
+  },
+  {
+   "id": 13,
+   "key": "lung_middle_lobe_right",
+   "voxels": 74715
+  },
+  {
+   "id": 14,
+   "key": "lung_lower_lobe_right",
+   "voxels": 142068
+  },
+  {
+   "id": 15,
+   "key": "esophagus",
+   "voxels": 3683
+  },
+  {
+   "id": 16,
+   "key": "trachea",
+   "voxels": 5070
+  },
+  {
+   "id": 17,
+   "key": "thyroid_gland",
+   "voxels": 1493
+  },
+  {
+   "id": 18,
+   "key": "small_bowel",
+   "voxels": 117835
+  },
+  {
+   "id": 19,
+   "key": "duodenum",
+   "voxels": 6543
+  },
+  {
+   "id": 20,
+   "key": "colon",
+   "voxels": 96779
+  },
+  {
+   "id": 21,
+   "key": "urinary_bladder",
+   "voxels": 23030
+  },
+  {
+   "id": 22,
+   "key": "prostate",
+   "voxels": 3523
+  },
+  {
+   "id": 23,
+   "key": "sacrum",
+   "voxels": 20531
+  },
+  {
+   "id": 24,
+   "key": "vertebrae_S1",
+   "voxels": 5833
+  },
+  {
+   "id": 25,
+   "key": "vertebrae_L5",
+   "voxels": 8445
+  },
+  {
+   "id": 26,
+   "key": "vertebrae_L4",
+   "voxels": 8458
+  },
+  {
+   "id": 27,
+   "key": "vertebrae_L3",
+   "voxels": 7991
+  },
+  {
+   "id": 28,
+   "key": "vertebrae_L2",
+   "voxels": 7344
+  },
+  {
+   "id": 29,
+   "key": "vertebrae_L1",
+   "voxels": 6618
+  },
+  {
+   "id": 30,
+   "key": "vertebrae_T12",
+   "voxels": 5737
+  },
+  {
+   "id": 31,
+   "key": "vertebrae_T11",
+   "voxels": 5531
+  },
+  {
+   "id": 32,
+   "key": "vertebrae_T10",
+   "voxels": 5193
+  },
+  {
+   "id": 33,
+   "key": "vertebrae_T9",
+   "voxels": 4790
+  },
+  {
+   "id": 34,
+   "key": "vertebrae_T8",
+   "voxels": 4178
+  },
+  {
+   "id": 35,
+   "key": "vertebrae_T7",
+   "voxels": 3845
+  },
+  {
+   "id": 36,
+   "key": "vertebrae_T6",
+   "voxels": 3605
+  },
+  {
+   "id": 37,
+   "key": "vertebrae_T5",
+   "voxels": 3209
+  },
+  {
+   "id": 38,
+   "key": "vertebrae_T4",
+   "voxels": 2975
+  },
+  {
+   "id": 39,
+   "key": "vertebrae_T3",
+   "voxels": 2965
+  },
+  {
+   "id": 40,
+   "key": "vertebrae_T2",
+   "voxels": 3071
+  },
+  {
+   "id": 41,
+   "key": "vertebrae_T1",
+   "voxels": 3168
+  },
+  {
+   "id": 42,
+   "key": "vertebrae_C7",
+   "voxels": 716
+  },
+  {
+   "id": 49,
+   "key": "heart",
+   "voxels": 75143
+  },
+  {
+   "id": 50,
+   "key": "aorta",
+   "voxels": 20631
+  },
+  {
+   "id": 51,
+   "key": "pulmonary_vein",
+   "voxels": 3047
+  },
+  {
+   "id": 52,
+   "key": "brachiocephalic_trunk",
+   "voxels": 451
+  },
+  {
+   "id": 53,
+   "key": "subclavian_artery_right",
+   "voxels": 647
+  },
+  {
+   "id": 54,
+   "key": "subclavian_artery_left",
+   "voxels": 909
+  },
+  {
+   "id": 55,
+   "key": "common_carotid_artery_right",
+   "voxels": 265
+  },
+  {
+   "id": 56,
+   "key": "common_carotid_artery_left",
+   "voxels": 524
+  },
+  {
+   "id": 57,
+   "key": "brachiocephalic_vein_left",
+   "voxels": 1807
+  },
+  {
+   "id": 58,
+   "key": "brachiocephalic_vein_right",
+   "voxels": 714
+  },
+  {
+   "id": 59,
+   "key": "atrial_appendage_left",
+   "voxels": 727
+  },
+  {
+   "id": 60,
+   "key": "superior_vena_cava",
+   "voxels": 2056
+  },
+  {
+   "id": 61,
+   "key": "inferior_vena_cava",
+   "voxels": 12211
+  },
+  {
+   "id": 62,
+   "key": "portal_vein_and_splenic_vein",
+   "voxels": 4092
+  },
+  {
+   "id": 63,
+   "key": "iliac_artery_left",
+   "voxels": 1721
+  },
+  {
+   "id": 64,
+   "key": "iliac_artery_right",
+   "voxels": 1694
+  },
+  {
+   "id": 65,
+   "key": "iliac_vena_left",
+   "voxels": 5372
+  },
+  {
+   "id": 66,
+   "key": "iliac_vena_right",
+   "voxels": 4889
+  },
+  {
+   "id": 67,
+   "key": "humerus_left",
+   "voxels": 5353
+  },
+  {
+   "id": 68,
+   "key": "humerus_right",
+   "voxels": 6552
+  },
+  {
+   "id": 69,
+   "key": "scapula_left",
+   "voxels": 17081
+  },
+  {
+   "id": 70,
+   "key": "scapula_right",
+   "voxels": 14692
+  },
+  {
+   "id": 71,
+   "key": "clavicula_left",
+   "voxels": 3166
+  },
+  {
+   "id": 72,
+   "key": "clavicula_right",
+   "voxels": 3352
+  },
+  {
+   "id": 73,
+   "key": "femur_left",
+   "voxels": 15613
+  },
+  {
+   "id": 74,
+   "key": "femur_right",
+   "voxels": 16411
+  },
+  {
+   "id": 75,
+   "key": "hip_left",
+   "voxels": 43995
+  },
+  {
+   "id": 76,
+   "key": "hip_right",
+   "voxels": 45121
+  },
+  {
+   "id": 77,
+   "key": "spinal_cord",
+   "voxels": 11996
+  },
+  {
+   "id": 78,
+   "key": "gluteus_maximus_left",
+   "voxels": 61453
+  },
+  {
+   "id": 79,
+   "key": "gluteus_maximus_right",
+   "voxels": 63809
+  },
+  {
+   "id": 80,
+   "key": "gluteus_medius_left",
+   "voxels": 31936
+  },
+  {
+   "id": 81,
+   "key": "gluteus_medius_right",
+   "voxels": 30478
+  },
+  {
+   "id": 82,
+   "key": "gluteus_minimus_left",
+   "voxels": 8437
+  },
+  {
+   "id": 83,
+   "key": "gluteus_minimus_right",
+   "voxels": 9143
+  },
+  {
+   "id": 84,
+   "key": "autochthon_left",
+   "voxels": 83800
+  },
+  {
+   "id": 85,
+   "key": "autochthon_right",
+   "voxels": 83567
+  },
+  {
+   "id": 86,
+   "key": "iliopsoas_left",
+   "voxels": 55806
+  },
+  {
+   "id": 87,
+   "key": "iliopsoas_right",
+   "voxels": 48720
+  },
+  {
+   "id": 90,
+   "key": "rib_left_1",
+   "voxels": 1164
+  },
+  {
+   "id": 91,
+   "key": "rib_left_2",
+   "voxels": 1581
+  },
+  {
+   "id": 92,
+   "key": "rib_left_3",
+   "voxels": 2230
+  },
+  {
+   "id": 93,
+   "key": "rib_left_4",
+   "voxels": 2393
+  },
+  {
+   "id": 94,
+   "key": "rib_left_5",
+   "voxels": 2951
+  },
+  {
+   "id": 95,
+   "key": "rib_left_6",
+   "voxels": 3277
+  },
+  {
+   "id": 96,
+   "key": "rib_left_7",
+   "voxels": 2848
+  },
+  {
+   "id": 97,
+   "key": "rib_left_8",
+   "voxels": 2775
+  },
+  {
+   "id": 98,
+   "key": "rib_left_9",
+   "voxels": 2340
+  },
+  {
+   "id": 99,
+   "key": "rib_left_10",
+   "voxels": 1825
+  },
+  {
+   "id": 100,
+   "key": "rib_left_11",
+   "voxels": 1258
+  },
+  {
+   "id": 101,
+   "key": "rib_left_12",
+   "voxels": 643
+  },
+  {
+   "id": 102,
+   "key": "rib_right_1",
+   "voxels": 1317
+  },
+  {
+   "id": 103,
+   "key": "rib_right_2",
+   "voxels": 1531
+  },
+  {
+   "id": 104,
+   "key": "rib_right_3",
+   "voxels": 2116
+  },
+  {
+   "id": 105,
+   "key": "rib_right_4",
+   "voxels": 2545
+  },
+  {
+   "id": 106,
+   "key": "rib_right_5",
+   "voxels": 3060
+  },
+  {
+   "id": 107,
+   "key": "rib_right_6",
+   "voxels": 3135
+  },
+  {
+   "id": 108,
+   "key": "rib_right_7",
+   "voxels": 2045
+  },
+  {
+   "id": 109,
+   "key": "rib_right_8",
+   "voxels": 2089
+  },
+  {
+   "id": 110,
+   "key": "rib_right_9",
+   "voxels": 2525
+  },
+  {
+   "id": 111,
+   "key": "rib_right_10",
+   "voxels": 2483
+  },
+  {
+   "id": 112,
+   "key": "rib_right_11",
+   "voxels": 1431
+  },
+  {
+   "id": 113,
+   "key": "rib_right_12",
+   "voxels": 523
+  },
+  {
+   "id": 114,
+   "key": "sternum",
+   "voxels": 8128
+  },
+  {
+   "id": 115,
+   "key": "costal_cartilages",
+   "voxels": 18507
+  }
+ ],
+ "values": {
+  "unit": "HU",
+  "scale": 1.0,
+  "offset": 0.0,
+  "step": 4
+ },
+ "origin": "INDEPENDENT_REFERENCE",
+ "spatial": "UNLINKED",
+ "labels": "the dataset's own reference segmentations (not this workstation's model output)",
+ "source": {
+  "dataset": "TotalSegmentator CT dataset v2.0.1",
+  "subject": "s0913",
+  "licence": "CC BY 4.0",
+  "doi": "10.5281/zenodo.10047292",
+  "citation": "Wasserthal et al., Radiology: Artificial Intelligence 2023"
+ }
+}

@@ -1,0 +1,27 @@
+# Render Blueprint: Dashboard -> New -> Blueprint -> pick the repository that holds this folder at its root.
+services:
+  - type: web
+    name: zeekarad-anatomy
+    runtime: python
+    # 2 GB of memory: a full clinical CT (about 130 million voxels) needs about 1.5 GB while it is read. A 512 MB plan (free or starter)
+    # handles only small volumes. A disk (below) needs a paid plan; without one, uploads are lost at every restart or deploy.
+    plan: standard
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    # One worker: uploads and their state live in this process's folder and memory. Threads serve the browser's parallel requests.
+    startCommand: gunicorn app:app --workers 1 --threads 8 --timeout 300 --bind 0.0.0.0:$PORT
+    healthCheckPath: /healthz
+    autoDeploy: false
+    envVars:
+      # Uploads go to the disk below. Without a disk the server uses a temporary folder instead and says so in the upload dialog.
+      - key: ZK_ANATOMY_DATA
+        value: /var/data
+      # No segmentation engine is installed on this server (see README): uploads are shown without labels.
+      - key: ZK_ANATOMY_AUTO_SEGMENT
+        value: "0"
+      - key: ZK_ANATOMY_MAX_UPLOAD_MB
+        value: "1024"
+    disk:
+      name: studies
+      mountPath: /var/data
+      sizeGB: 10

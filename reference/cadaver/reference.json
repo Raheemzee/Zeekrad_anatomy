@@ -1,0 +1,27 @@
+{
+ "kind": "cadaver",
+ "title": "Cadaver cryosections",
+ "dims": [
+  384,
+  209,
+  365
+ ],
+ "spacing": [
+  1.501328125,
+  1.5015789473684213,
+  2.0
+ ],
+ "cols": 6,
+ "rows": 5,
+ "sheets": 13,
+ "origin": "INDEPENDENT_REFERENCE",
+ "spatial": "UNLINKED",
+ "labels": null,
+ "source": {
+  "dataset": "Visible Human Project, male, cryosection colour images",
+  "publisher": "U.S. National Library of Medicine",
+  "slices": "a_vm1300 to a_vm2028, every second 1 mm section",
+  "processing": "Downsampled from 0.33 mm to 1.5 mm pixels, gel background masked, image flipped to radiological convention",
+  "credit": "Courtesy of the U.S. National Library of Medicine. Not the most current data available from NLM."
+ }
+}

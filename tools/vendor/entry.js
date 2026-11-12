@@ -1,0 +1,22 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { GTAOPass } from 'three/examples/jsm/postprocessing/GTAOPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
+import '@kitware/vtk.js/Rendering/Profiles/Volume';
+import '@kitware/vtk.js/Rendering/Profiles/Geometry';
+import vtkGenericRenderWindow from '@kitware/vtk.js/Rendering/Misc/GenericRenderWindow';
+import vtkVolume from '@kitware/vtk.js/Rendering/Core/Volume';
+import vtkVolumeMapper from '@kitware/vtk.js/Rendering/Core/VolumeMapper';
+import vtkActor from '@kitware/vtk.js/Rendering/Core/Actor';
+import vtkMapper from '@kitware/vtk.js/Rendering/Core/Mapper';
+import vtkColorTransferFunction from '@kitware/vtk.js/Rendering/Core/ColorTransferFunction';
+import vtkPiecewiseFunction from '@kitware/vtk.js/Common/DataModel/PiecewiseFunction';
+import vtkImageData from '@kitware/vtk.js/Common/DataModel/ImageData';
+import vtkPolyData from '@kitware/vtk.js/Common/DataModel/PolyData';
+import vtkPlane from '@kitware/vtk.js/Common/DataModel/Plane';
+import vtkDataArray from '@kitware/vtk.js/Common/Core/DataArray';
+window.ZKLIB = { THREE, OrbitControls, RoomEnvironment, EffectComposer, RenderPass, GTAOPass, OutputPass, vtk: { vtkGenericRenderWindow, vtkVolume, vtkVolumeMapper, vtkActor, vtkMapper,
+  vtkColorTransferFunction, vtkPiecewiseFunction, vtkImageData, vtkPolyData, vtkPlane, vtkDataArray } };

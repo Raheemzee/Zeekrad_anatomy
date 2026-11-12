@@ -1,0 +1,4 @@
+# Optional: the segmentation engine for your own uploads. Without it the workstation opens every study and says segmentation is not installed.
+# Large download (PyTorch). The model weights (about 230 MB a task) are downloaded by the engine on first use from its own release server.
+# For an NVIDIA GPU install the CUDA build of PyTorch first: https://pytorch.org/get-started/locally/
+TotalSegmentator==2.18.0

@@ -1,0 +1,6 @@
+{
+  "name": "zk-anatomy-vendor",
+  "private": true,
+  "description": "Rebuilds static/vendor.js: npm install && npx esbuild entry.js --bundle --minify --format=iife --outfile=../../static/vendor.js",
+  "dependencies": { "@kitware/vtk.js": "38.0.7", "three": "0.183.2", "esbuild": "0.28.2" }
+}

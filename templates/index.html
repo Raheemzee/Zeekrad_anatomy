@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZeekaRad Anatomy Workstation</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}?v={{ version }}">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><b>ZeekaRad</b><span>Anatomy workstation, local build {{ version }}</span></div>
+  <span class="chip" id="chipStudy"><i></i><span>Loading</span></span>
+  <span class="chip" id="chipSeg"><i></i><span>Segmentation</span></span>
+  <span class="spacer"></span>
+  <label class="field" for="langSel">Names
+    <select id="langSel" title="Language of the anatomical names. Switching does not reload the study."></select>
+  </label>
+  <label class="field" for="winSel">Window <select id="winSel"></select></label>
+  <label class="field" for="opRange">Colour strength <input type="range" id="opRange" min="15" max="90" value="48"></label>
+  <button class="btn" id="allColour" aria-pressed="true" title="One action: hide every anatomy overlay in every view that has one (B to G). With none showing, it shows them in all views. Panel A never has one.">Hide all colour</button>
+  <button class="btn" id="linkAB" aria-pressed="true" title="When linked, panel B follows panel A's plane and cine">Link A and B</button>
+  <button class="btn" id="aboutBtn">About</button>
+</header>
+<div class="notice" id="notice" hidden></div>
+
+<div class="work">
+  <aside class="rail" aria-label="Studies and structures">
+    <section>
+      <header><div class="headrow"><h2>Studies</h2><button class="btn" id="uploadBtn" title="Add your own study: a DICOM series (files, folder or zip) or a NIfTI volume">Upload</button></div></header>
+      <div class="studies" id="studies"></div>
+    </section>
+    <section>
+      <header><div class="headrow"><h2>Segmentation</h2></div></header>
+      <div class="segbox" id="segbox"></div>
+    </section>
+    <header>
+      <h2>Structures</h2>
+      <div class="sub" id="railSub">No study open</div>
+      <input type="search" id="structSearch" placeholder="Search in any language, English or Latin" aria-label="Search structures">
+    </header>
+    <div class="tree" id="tree"></div>
+    <div class="card" id="card"></div>
+  </aside>
+  <section class="grid" id="grid" aria-label="Image panels"></section>
+</div>
+
+<footer class="status">
+  <span id="stHover" dir="auto">No structure under the pointer</span>
+  <span class="num" id="stPos"></span>
+  <span class="num" id="stCine"></span>
+  <span class="grow"></span>
+  <span class="warn">Model output, not reviewed by a clinician. Local test build, not for diagnosis.</span>
+</footer>
+
+<div id="tip" hidden></div>
+
+<dialog id="uploadDlg">
+  <form class="in" id="uploadForm">
+    <h2>Add a study</h2>
+    <p>A DICOM series (single-frame CT or MR), as files, a folder or a zip, or a NIfTI volume (.nii, .nii.gz). The study stays on this computer.</p>
+    <label class="fld">Files or a zip <input type="file" id="upFiles" multiple></label>
+    <label class="fld">or a folder of DICOM files <input type="file" id="upFolder" webkitdirectory multiple></label>
+    <div class="two">
+      <label class="fld">Modality of a NIfTI file
+        <select id="upModality"><option value="auto">Work it out from the values</option><option value="CT">CT</option><option value="MR">MR</option></select></label>
+      <label class="fld">Segmentation
+        <select id="upLevel"></select></label>
+    </div>
+    <p id="upEngine"></p>
+    <progress id="upProgress" max="1" value="0" hidden></progress>
+    <div class="result" id="upResult"></div>
+    <div class="foot"><button class="btn" type="button" id="upClose">Close</button><button class="btn" type="submit" id="upSend" aria-pressed="true">Upload</button></div>
+  </form>
+</dialog>
+
+<dialog id="about">
+  <div class="in">
+    <h2>ZeekaRad Anatomy workstation, local build</h2>
+    <p>Seven linked panels on real images, with every structure the installed models can segment named under the pointer in 14 languages.</p>
+    <h3>What is shown, and where it comes from</h3>
+    <ul>
+      <li><b>Patient-derived, automated:</b> the labels in panels B, D, E, F and G are model output (TotalSegmentator) on the study's own grid. No clinician has reviewed them.</li>
+      <li><b>Independent reference:</b> panel C shows another body: a labelled CT of another subject, or cadaver cryosections. It is never registered to the patient and never follows the patient's scrolling. Selecting a structure moves the reference to the structure of the same name.</li>
+      <li><b>Names:</b> English is canonical. Other languages come from ZeekaRad's term base or from Wikidata (CC0), as recorded per structure. Neither is clinician-reviewed. Where no source gives a name, the English name is shown and marked EN; nothing is machine-translated.</li>
+    </ul>
+    <h3>Names on record</h3>
+    <table id="abCoverage"></table>
+    <h3>Segmentation engine</h3>
+    <ul id="abEngine"></ul>
+    <h3>Data and licences</h3>
+    <ul>
+      <li>Sample CT studies and the labelled reference CT: TotalSegmentator CT dataset v2.0.1 (Wasserthal et al.), CC BY 4.0, doi:10.5281/zenodo.10047292.</li>
+      <li>Sample MR study: AMOS22 (Ji et al.), CC BY 4.0, doi:10.5281/zenodo.7262581.</li>
+      <li>Cadaver cryosections: Visible Human Project, male. Courtesy of the U.S. National Library of Medicine. Not the most current data available from NLM.</li>
+      <li>Rendering: three.js (MIT) and vtk.js by Kitware (BSD 3-Clause). Nothing from IMAIOS or any other commercial atlas is used.</li>
+    </ul>
+    <h3>Limits</h3>
+    <ul>
+      <li>CT and MR volumes only. Projection images, ultrasound, multi-frame and time-resolved series are refused at upload with the reason.</li>
+      <li>The MR model names 50 structures of the trunk and the brain as one structure. Nerves, small vessel branches, ligaments and fascial spaces are not segmented by any model here.</li>
+      <li>A structure missing from the list is not evidence that it is absent in the patient.</li>
+    </ul>
+    <div class="foot"><button class="btn" id="aboutClose">Close</button></div>
+  </div>
+</dialog>
+
+<script src="{{ url_for('static', filename='vendor.js') }}?v={{ version }}"></script>
+<script src="{{ url_for('static', filename='app.js') }}?v={{ version }}"></script>
+</body>
+</html>

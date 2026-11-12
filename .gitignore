@@ -1,0 +1,6 @@
+# Anchored: only the uploads folder at the top. A bare "data/" would also hide anatomy/data/structures.json from Git.
+/data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

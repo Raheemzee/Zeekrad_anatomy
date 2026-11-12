@@ -1,0 +1,10 @@
+# Server build for Render. Exact versions this build was tested with (Linux, Python 3.13).
+flask==3.1.3
+werkzeug==3.1.9
+gunicorn==27.0.0           # the production server Render runs (see render.yaml startCommand)
+numpy==2.5.4
+scipy==1.18.1
+nibabel==5.5.0
+pydicom==3.0.2
+python-gdcm==3.2.6         # decodes compressed DICOM (JPEG lossless, JPEG-LS, JPEG 2000, RLE)
+vtk==9.7.2                 # builds the 3-D surfaces after a segmentation; only its filters are loaded, no graphics libraries needed
